@@ -1,0 +1,50 @@
+def soma():
+    global acumulador
+    var1 = float(input('Somado à: '))
+    acumulador += var1
+    return acumulador
+def subtracao():
+    global acumulador
+    var1 = float(input('Subtraído de: '))
+    acumulador -= var1
+    return acumulador
+def multiplicador():
+    global acumulador
+    var1 = float(input('Multiplicado por: '))
+    acumulador *= var1
+    return acumulador
+def divisao():
+    global acumulador
+    var1 = float(input('Dividido por: '))
+    if var1 == 0:
+        print('Não é possível dividir por zero!')
+    else:
+        acumulador /= var1
+        return acumulador
+
+#Começo do Programa
+
+print('Calculadora 2.0\n')
+print('Adição: (+)\nSubtração: (-)\nMultiplicação: (*)\nDivisão: (/)\n')
+try:
+    acumulador = 0
+    while True:
+
+        op = input('Digite um operador ou "q" para sair: ')
+        if op == 'q':
+            break
+        elif op == '+':
+            soma()
+            print(acumulador)
+        elif op == '-':
+            subtracao()
+            print(acumulador)
+        elif op == '*':
+            multiplicador()
+            print(acumulador)
+        elif op == '/':
+            divisao()
+            print(acumulador)
+
+except ValueError:
+    print('Comando inválido! Tente novamente! ...')
